@@ -1,0 +1,78 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --font-prose: 'Courier Prime', 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    --font-ui: 'JetBrains Mono', 'Courier Prime', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  }
+
+  html {
+    font-family: var(--font-prose);
+    font-feature-settings: "liga" 1, "calt" 1;
+  }
+
+  body {
+    background-color: #F7F4EE;
+    color: #1E1D1B;
+    transition: background-color 220ms cubic-bezier(0.16, 1, 0.3, 1), color 220ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  html.dark body {
+    background-color: #14171A;
+    color: #EAE6DF;
+  }
+}
+
+.font-prose {
+  font-family: var(--font-prose);
+}
+
+.font-ui {
+  font-family: var(--font-ui);
+}
+
+@keyframes journalFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes deltaFloat {
+  0% {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  20% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  80% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+}
+
+.animate-journal-in {
+  animation: journalFadeIn 320ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.animate-delta-float {
+  animation: deltaFloat 1.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-journal-in,
+  .animate-delta-float {
+    animation: none !important;
+  }
+}

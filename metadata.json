@@ -1,0 +1,8 @@
+{
+  "name": "Persimpangan Toga — Jurnal Dilema Pasca-Sidang",
+  "description": "Game web naratif interaktif bergaya jurnal minimalis tentang dilema mahasiswa tingkat akhir: melanjutkan kuliah S2, langsung bekerja, atau mengambil jeda terencana.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
